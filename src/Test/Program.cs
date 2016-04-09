@@ -23,6 +23,7 @@ using System.ServiceModel.Description;
 using System.Linq.Expressions;
 using Test.ZIP;
 using System.Threading;
+using System.Reflection;
 
 
 namespace Test
@@ -603,6 +604,18 @@ namespace Test
             Console.WriteLine(Math.Round(12.66));
 
             Console.WriteLine("123456789".Substring(0, 5));
+
+            var tttt = typeof(ServiceProvider).GetMethods().FirstOrDefault().GetCustomAttributes(inherit: false);
+            //System.Reflection.TypeInfo ttt = typeof(GetShippingLabelResponse).GetTypeInfo().GetCustomAttributes().OfType<>();
+
+            File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "456789.txt"), "12238787");
+
+            List<string> aaaaabb = new List<string> { "aaa", "bbb", "cccc"};
+            var ccc = aaaaabb.Take(2).ToList();
+            var dddd = aaaaabb.Last();
+
+            var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
+            ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
 
             Console.ReadLine();
         }
