@@ -19,3 +19,6 @@ D:\MyCode\Test\Test\obj\Debug\Test.pdb
 D:\MyCode\Test\Test\bin\Debug\Model.dll
 D:\MyCode\Test\Test\bin\Debug\Model.pdb
 D:\MyCode\Test\Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\MyCode\Test\Test\bin\Debug\NLog.dll
+D:\MyCode\Test\Test\bin\Debug\NLog.xml
+D:\MyCode\Test\Test\bin\Debug\Nlog.config

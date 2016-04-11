@@ -376,8 +376,8 @@ namespace Test
             //WriteFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DateTime.Now.ToString("yyyy-MM-dd") + ".txt"));
             Console.WriteLine("---------------------------------------");
 
-            ILog log = new Log();
-            log.WriteLog("\n\ttest comming from log 123456789 \t\n");
+            //ILog log = new Log();
+            //log.WriteLog("\n\ttest comming from log 123456789 \t\n");
 
             Console.WriteLine("------------------------------------------");
             int? j = null;
@@ -614,8 +614,13 @@ namespace Test
             var ccc = aaaaabb.Take(2).ToList();
             var dddd = aaaaabb.Last();
 
-            var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
-            ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
+            //var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
+            //ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
+
+            //var nLogger = NLog.LogManager.GetCurrentClassLogger();
+            var nlogger = NLog.LogManager.GetLogger("info");
+            nlogger.Info("sdfasdfasdfasfdasdfasdfads");
+            //nLogger.Debug("debug 11111");
 
             Console.ReadLine();
         }
