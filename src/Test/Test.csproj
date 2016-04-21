@@ -82,6 +82,7 @@
     <Compile Include="Common\BaseOther.cs" />
     <Compile Include="Common\Constr.cs" />
     <Compile Include="Common\FTPManager.cs" />
+    <Compile Include="Common\HttpClient.cs" />
     <Compile Include="Common\Implement.cs" />
     <Compile Include="Common\ImplementOther.cs" />
     <Compile Include="Common\ManageRequest.cs" />
@@ -89,7 +90,8 @@
     <Compile Include="Common\Person.cs" />
     <Compile Include="Common\PersonManager.cs" />
     <Compile Include="Common\PersonOther.cs" />
-    <Compile Include="Common\SerializeManager1.cs" />
+    <Compile Include="Common\RestRequst.cs" />
+    <Compile Include="Common\SerializeManager.cs" />
     <Compile Include="Common\SSBCate0Model.cs" />
     <Compile Include="Common\StreamZip.cs" />
     <Compile Include="Common\TestStatic.cs" />
@@ -118,6 +120,7 @@
     </None>
     <Content Include="Nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="packages.config" />
   </ItemGroup>

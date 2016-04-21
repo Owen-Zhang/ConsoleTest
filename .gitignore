@@ -18,3 +18,5 @@ packages/
 artifacts/
 TestResults/
 *.jpg
+*.dll
+*.pdb

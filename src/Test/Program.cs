@@ -622,6 +622,19 @@ namespace Test
             nlogger.Info("sdfasdfasdfasfdasdfasdfads");
             //nLogger.Debug("debug 11111");
 
+            HttpRestClient client = new HttpRestClient(
+                new WebHeaderCollection {
+                     //{"Accept", ContentFormat.Json},
+                     //{"AuthorizationToken", "SKxNqrhhmgfgo/lr6uhZbk1/quEMbYoOgTg1ZO4glUaBvEc1MeYiDAk9/lR+YSw67miD02eExn2gEdGm02+xxouv1+XGna4DDdVYCbF8MhZH5G7uRfQjtF448ny5j24Id9yjd8RbcVHnMIFmxUrph6LW4L32WWxv0vJpCLTFEOeQo0cSXt+LjK2Z5yOHTt9oGAu5Is1qYellKBjrHcOx0jt6SQpH/Kz0MpPLJenwIfdL7UhFypCrXjjoZsWD/Gmku4tq0sanEir4tRGGBp5ORYJB7mfqC26lAxt1a27HSGE="}
+                });
+            /*
+            var resultRest = 
+            client.PostByStrService<string>(
+                    @"http://10.1.24.188:8009/Sandbox/V2.0.33.0/shippingsetting/fulfillmentcenterlist?buts=1460532268380&SellerID=AWFO",
+                    "Get");
+            */
+            var picbyte = client.GetByteService(@"http://10.1.24.144:8001/SBNInbound/UPSShippingLabel/018b9b98-9ea6-4487-92f0-7995d335851c.pdf", "Get");
+
             Console.ReadLine();
         }
 
