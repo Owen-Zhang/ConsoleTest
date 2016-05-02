@@ -636,6 +636,7 @@ namespace Test
             */
             var picbyte = client.GetByteService(@"http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", "Get");
 
+            Console.WriteLine("Test V1");
             Console.ReadLine();
         }
 
