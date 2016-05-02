@@ -1,9 +1,0 @@
-D:\MyCode\Test\Service\bin\Debug\Service.dll
-D:\MyCode\Test\Service\bin\Debug\Service.pdb
-D:\MyCode\Test\Service\bin\Debug\IService.dll
-D:\MyCode\Test\Service\bin\Debug\IService.pdb
-D:\MyCode\Test\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-D:\MyCode\Test\Service\obj\Debug\Service.dll
-D:\MyCode\Test\Service\obj\Debug\Service.pdb
-D:\MyCode\Test\Service\bin\Debug\Model.dll
-D:\MyCode\Test\Service\bin\Debug\Model.pdb

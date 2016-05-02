@@ -1,8 +1,0 @@
-D:\MyCode\Test\RedisManager\bin\Debug\RedisManager.dll
-D:\MyCode\Test\RedisManager\bin\Debug\RedisManager.pdb
-D:\MyCode\Test\RedisManager\bin\Debug\ServiceStack.Common.dll
-D:\MyCode\Test\RedisManager\bin\Debug\ServiceStack.Interfaces.dll
-D:\MyCode\Test\RedisManager\bin\Debug\ServiceStack.Redis.dll
-D:\MyCode\Test\RedisManager\obj\Debug\RedisManager.dll
-D:\MyCode\Test\RedisManager\obj\Debug\RedisManager.pdb
-D:\MyCode\Test\RedisManager\obj\Debug\RedisManager.csprojResolveAssemblyReference.cache

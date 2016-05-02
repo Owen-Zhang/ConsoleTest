@@ -1,9 +1,0 @@
-D:\MyCode\Test\IService\bin\Debug\IService.dll
-D:\MyCode\Test\IService\bin\Debug\IService.pdb
-D:\MyCode\Test\IService\obj\Debug\IService.dll
-D:\MyCode\Test\IService\obj\Debug\IService.pdb
-D:\MyCode\Test\IService\bin\Debug\Aspose.Cells.dll
-D:\MyCode\Test\IService\bin\Debug\AutoMapper.dll
-D:\MyCode\Test\IService\obj\Debug\IService.csprojResolveAssemblyReference.cache
-D:\MyCode\Test\IService\bin\Debug\Model.dll
-D:\MyCode\Test\IService\bin\Debug\Model.pdb
