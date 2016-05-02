@@ -407,10 +407,11 @@ namespace Test
             Console.WriteLine("----------------------------------------");
 
             Console.WriteLine("使用byte进行文件读取保存");
-            var bytes = FileReadOrWrite.ReadFile("D:\\Picture\\635761076339268887.jpg");
+            var bytes = FileReadOrWrite.ReadFile(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Picture","635761076339268887.jpg"));
             Console.WriteLine(bytes.Length);
             FileReadOrWrite.WriteFileFromBytes(
-                String.Format("{0}\\Picture\\{1}.jpg", AppDomain.CurrentDomain.BaseDirectory, DateTime.Now.Ticks),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Picture", DateTime.Now.Ticks.ToString()),
                 bytes);
             Console.WriteLine("------------------------------");
             var sex = Enum.Parse(typeof(PersonEnum.PersonSex), "1");
@@ -541,9 +542,9 @@ namespace Test
 
             ZIPManager.ZipDirectory(zipPathSource, zipPath, 9);
 
-            string copyPath = string.Format(@"{0}UPS\456.pdf", AppDomain.CurrentDomain.BaseDirectory);
-            ZIPManager.CopyHttpFile("http://10.1.24.144:8001/SBNInbound/UPSShippingLabel/a3ef56fa-bba0-4fc4-82b1-dadff4332c55.pdf", copyPath);
-            string UrlPath = "http://10.1.24.144:8001/SBNInbound/UPSShippingLabel/a3ef56fa-bba0-4fc4-82b1-dadff4332c55.pdf";
+            string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
+            ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
+            string UrlPath = "http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png";
             Console.WriteLine(Path.GetFileName(UrlPath));
 
             Directory.Delete(zipPathSource, true);
@@ -633,7 +634,7 @@ namespace Test
                     @"http://10.1.24.188:8009/Sandbox/V2.0.33.0/shippingsetting/fulfillmentcenterlist?buts=1460532268380&SellerID=AWFO",
                     "Get");
             */
-            var picbyte = client.GetByteService(@"http://10.1.24.144:8001/SBNInbound/UPSShippingLabel/018b9b98-9ea6-4487-92f0-7995d335851c.pdf", "Get");
+            var picbyte = client.GetByteService(@"http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", "Get");
 
             Console.ReadLine();
         }
@@ -717,8 +718,9 @@ namespace Test
 
         private static string GetLargeStr()
         {
-            return File.ReadAllText(string.Format("{0}{1}", 
-                     AppDomain.CurrentDomain.BaseDirectory, @"File\LargeFile.txt"),Encoding.GetEncoding("gb2312"));
+            return File.ReadAllText(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"File\LargeFile.txt"),
+                Encoding.GetEncoding("gb2312"));
         }
 
         private static string GetTypeName(Type type)
