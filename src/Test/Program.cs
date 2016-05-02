@@ -623,6 +623,8 @@ namespace Test
             nlogger.Info("sdfasdfasdfasfdasdfasdfads");
             //nLogger.Debug("debug 11111");
 
+            Console.WriteLine("Test V1 again");
+
             HttpRestClient client = new HttpRestClient(
                 new WebHeaderCollection {
                      //{"Accept", ContentFormat.Json},
