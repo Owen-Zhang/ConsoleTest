@@ -623,6 +623,8 @@ namespace Test
             nlogger.Info("sdfasdfasdfasfdasdfasdfads");
             //nLogger.Debug("debug 11111");
 
+            Console.WriteLine("Test V1 again");
+
             HttpRestClient client = new HttpRestClient(
                 new WebHeaderCollection {
                      //{"Accept", ContentFormat.Json},
@@ -637,6 +639,7 @@ namespace Test
             var picbyte = client.GetByteService(@"http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", "Get");
 
             Console.WriteLine("hotfix bug");
+            Console.WriteLine("Test V1");
             Console.ReadLine();
         }
 
