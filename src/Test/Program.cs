@@ -617,9 +617,9 @@ namespace Test
             //var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
             //ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
 
-            //var nLogger = NLog.LogManager.GetCurrentClassLogger();
-            var nlogger = NLog.LogManager.GetLogger("info");
-            nlogger.Info("sdfasdfasdfasfdasdfasdfads");
+            var nLogger = NLog.LogManager.GetCurrentClassLogger();
+            //var nLogger = NLog.LogManager.GetLogger("info");
+            nLogger.Info("sdfasdfasdfasfdasdfasdfads 111111122222");
             //nLogger.Debug("debug 11111");
 
             HttpRestClient client = new HttpRestClient(
@@ -634,6 +634,54 @@ namespace Test
                     "Get");
             */
             var picbyte = client.GetByteService(@"http://10.1.24.144:8001/SBNInbound/UPSShippingLabel/018b9b98-9ea6-4487-92f0-7995d335851c.pdf", "Get");
+
+            var listother1 = new List<Person>();
+
+            var ssss = listother1.Select(item => new {Name = item.Name });
+
+            XElement rootother = new XElement("ItemNumberList");
+            var list = new string[] { "9SIBG3Z03D5130" };
+            list.ToList().ForEach(item => rootother.Add(new XElement("ItemNumber", item)));
+            Console.WriteLine(rootother.ToString());
+
+            var testJson = new List<PersonModel> { 
+                new PersonModel{
+                     Id = 1,
+                      Name = "123",
+                      testNum = TestEnum.first,
+                      dt = DateTime.Now
+                },
+                new PersonModel{
+                     Id = 2,
+                      Name = "456",
+                      testNum = TestEnum.second,
+                      dt = DateTime.Now.AddDays(1)
+                }
+            };
+
+            ServiceStack.Text.JsConfig.DateHandler = ServiceStack.Text.JsonDateHandler.ISO8601;
+            var jsonResult = ServiceStack.Text.JsonSerializer.SerializeToString(testJson);
+
+            var pList10 = new List<Person>{
+                new Person{
+                     Id = 0,
+                      IsEnabled = true,
+                },
+                new Person{
+                     Id = 1,
+                      IsEnabled = true,
+                },
+                new Person{
+                     Id = 2,
+                      IsEnabled = true,
+                }
+            };
+
+            pList10.FindAll(item => item.Id == 6).ForEach(
+                    item => Console.WriteLine(item.Id)
+                );
+
+            Console.WriteLine(Math.Round(10.14568, 2));
 
             Console.ReadLine();
         }
