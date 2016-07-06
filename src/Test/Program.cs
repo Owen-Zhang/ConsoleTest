@@ -543,7 +543,7 @@ namespace Test
             ZIPManager.ZipDirectory(zipPathSource, zipPath, 9);
 
             string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
-            ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
+            //ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
             string UrlPath = "http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png";
             Console.WriteLine(Path.GetFileName(UrlPath));
 
@@ -647,24 +647,6 @@ namespace Test
             list.ToList().ForEach(item => rootother.Add(new XElement("ItemNumber", item)));
             Console.WriteLine(rootother.ToString());
 
-            var testJson = new List<PersonModel> { 
-                new PersonModel{
-                     Id = 1,
-                      Name = "123",
-                      testNum = TestEnum.first,
-                      dt = DateTime.Now
-                },
-                new PersonModel{
-                     Id = 2,
-                      Name = "456",
-                      testNum = TestEnum.second,
-                      dt = DateTime.Now.AddDays(1)
-                }
-            };
-
-            ServiceStack.Text.JsConfig.DateHandler = ServiceStack.Text.JsonDateHandler.ISO8601;
-            var jsonResult = ServiceStack.Text.JsonSerializer.SerializeToString(testJson);
-
             var pList10 = new List<Person>{
                 new Person{
                      Id = 0,
@@ -685,9 +667,39 @@ namespace Test
                 );
 
             Console.WriteLine(Math.Round(10.14568, 2));
-            Console.WriteLine("hotfix bug");
-            Console.WriteLine("Test V1");
+
+            int i = GetPropertyValue<int>("sss");
+            
             Console.ReadLine();
+        }
+
+        public static T GetPropertyValue<T>(string key)
+        {
+            object value = "true";
+
+            if (string.IsNullOrEmpty(key)) return default(T);
+            Type tp = typeof(T);
+
+            if (tp.IsGenericType)
+                tp = tp.GetGenericArguments()[0];
+
+            if (string.Equals(tp.Name, "string", StringComparison.OrdinalIgnoreCase))
+                return (T)value;
+
+            var tryParse = tp.GetMethod(
+                                "TryParse",
+                                BindingFlags.Public | BindingFlags.Static,
+                                Type.DefaultBinder,
+                                new Type[] { typeof(string), tp.MakeByRefType() },
+                                //new ParameterModifier[] { new ParameterModifier(2)});
+                                null);
+            var parameters = new object[] { value, Activator.CreateInstance(tp) };
+            var result = (bool)tryParse.Invoke(null, parameters);
+
+            if (result)
+                return (T)parameters[1];
+
+            return default(T);
         }
 
         public static Task<double> GetValueAsync(double num1, double num2)  
