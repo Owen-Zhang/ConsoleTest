@@ -686,6 +686,7 @@ namespace Test
             if (string.Equals(tp.Name, "string", StringComparison.OrdinalIgnoreCase))
                 return (T)value;
 
+            //在此可以使用ConcurrentDictionary来缓存MethodInfo
             var tryParse = tp.GetMethod(
                                 "TryParse",
                                 BindingFlags.Public | BindingFlags.Static,
