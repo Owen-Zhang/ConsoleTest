@@ -615,6 +615,10 @@ namespace Test
             var ccc = aaaaabb.Take(2).ToList();
             var dddd = aaaaabb.Last();
 
+            var dddresult = aaaaabb.Find(item => item == "ddd");
+
+            var testdefault = default(Person);
+
             //var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
             //ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
 
@@ -640,6 +644,8 @@ namespace Test
 
             Console.WriteLine("hotfix bug");
             Console.WriteLine("Test V1");
+
+            
             Console.ReadLine();
         }
 
