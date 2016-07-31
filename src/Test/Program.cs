@@ -542,8 +542,8 @@ namespace Test
 
             ZIPManager.ZipDirectory(zipPathSource, zipPath, 9);
 
-            string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
-            ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
+            //string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
+            //ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
             string UrlPath = "http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png";
             Console.WriteLine(Path.GetFileName(UrlPath));
 
@@ -609,7 +609,7 @@ namespace Test
             var tttt = typeof(ServiceProvider).GetMethods().FirstOrDefault().GetCustomAttributes(inherit: false);
             //System.Reflection.TypeInfo ttt = typeof(GetShippingLabelResponse).GetTypeInfo().GetCustomAttributes().OfType<>();
 
-            File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "456789.txt"), "12238787");
+            //File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "456789.txt"), "12238787");
 
             List<string> aaaaabb = new List<string> { "aaa", "bbb", "cccc"};
             var ccc = aaaaabb.Take(2).ToList();
@@ -622,9 +622,9 @@ namespace Test
             //var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
             //ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
 
-            //var nLogger = NLog.LogManager.GetCurrentClassLogger();
-            var nlogger = NLog.LogManager.GetLogger("info");
-            nlogger.Info("sdfasdfasdfasfdasdfasdfads");
+            var nLogger = NLog.LogManager.GetCurrentClassLogger();
+            //var nLogger = NLog.LogManager.GetLogger("info");
+            nLogger.Info("sdfasdfasdfasfdasdfasdfads 111111122222");
             //nLogger.Debug("debug 11111");
 
             Console.WriteLine("Test V1 again");
@@ -642,11 +642,69 @@ namespace Test
             */
             var picbyte = client.GetByteService(@"http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", "Get");
 
-            Console.WriteLine("hotfix bug");
-            Console.WriteLine("Test V1");
+            var listother1 = new List<Person>();
 
+            var ssss = listother1.Select(item => new {Name = item.Name });
+
+            XElement rootother = new XElement("ItemNumberList");
+            var list = new string[] { "9SIBG3Z03D5130" };
+            list.ToList().ForEach(item => rootother.Add(new XElement("ItemNumber", item)));
+            Console.WriteLine(rootother.ToString());
+
+            var pList10 = new List<Person>{
+                new Person{
+                     Id = 0,
+                      IsEnabled = true,
+                },
+                new Person{
+                     Id = 1,
+                      IsEnabled = true,
+                },
+                new Person{
+                     Id = 2,
+                      IsEnabled = true,
+                }
+            };
+
+            pList10.FindAll(item => item.Id == 6).ForEach(
+                    item => Console.WriteLine(item.Id)
+                );
+
+            Console.WriteLine(Math.Round(10.14568, 2));
+
+            int i = GetPropertyValue<int>("sss");
             
             Console.ReadLine();
+        }
+
+        public static T GetPropertyValue<T>(string key)
+        {
+            object value = "true";
+
+            if (string.IsNullOrEmpty(key)) return default(T);
+            Type tp = typeof(T);
+
+            if (tp.IsGenericType)
+                tp = tp.GetGenericArguments()[0];
+
+            if (string.Equals(tp.Name, "string", StringComparison.OrdinalIgnoreCase))
+                return (T)value;
+
+            //在此可以使用ConcurrentDictionary来缓存MethodInfo
+            var tryParse = tp.GetMethod(
+                                "TryParse",
+                                BindingFlags.Public | BindingFlags.Static,
+                                Type.DefaultBinder,
+                                new Type[] { typeof(string), tp.MakeByRefType() },
+                                //new ParameterModifier[] { new ParameterModifier(2)});
+                                null);
+            var parameters = new object[] { value, Activator.CreateInstance(tp) };
+            var result = (bool)tryParse.Invoke(null, parameters);
+
+            if (result)
+                return (T)parameters[1];
+
+            return default(T);
         }
 
         public static Task<double> GetValueAsync(double num1, double num2)  
