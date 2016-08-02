@@ -1,3 +1,4 @@
+build/
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
@@ -12,6 +13,9 @@ TestResults
 # User-specific files
 *.suo
 *.user
+bin
+Bin
+obj
 *.sln.docstates
 
 # Build results
@@ -58,6 +62,14 @@ ipch/
 
 # ReSharper is a .NET coding add-in
 _ReSharper*
+*.csproj.user
+*.resharper.user
+*.suo
+*.cache
+TestResult.xml
+*.orig
+.hg/
+.hgignore
 
 # NCrunch
 *.ncrunch*
@@ -84,6 +96,13 @@ publish
 
 # NuGet Packages Directory
 packages/
+*.sln.ide/
+artifacts/
+TestResults/
+*.jpg
+*.dll
+*.pdb
+ No newline at end of file
 
 # Windows Azure Build Output
 csx

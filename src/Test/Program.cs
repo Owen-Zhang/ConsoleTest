@@ -542,7 +542,7 @@ namespace Test
 
             ZIPManager.ZipDirectory(zipPathSource, zipPath, 9);
 
-            string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
+            //string copyPath = string.Format(@"{0}UPS\456.png", AppDomain.CurrentDomain.BaseDirectory);
             //ZIPManager.CopyHttpFile("http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png", copyPath);
             string UrlPath = "http://img1.bdstatic.com/static/home/widget/search_box_home/logo/home_white_logo_0ddf152.png";
             Console.WriteLine(Path.GetFileName(UrlPath));
@@ -609,11 +609,15 @@ namespace Test
             var tttt = typeof(ServiceProvider).GetMethods().FirstOrDefault().GetCustomAttributes(inherit: false);
             //System.Reflection.TypeInfo ttt = typeof(GetShippingLabelResponse).GetTypeInfo().GetCustomAttributes().OfType<>();
 
-            File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "456789.txt"), "12238787");
+            //File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "456789.txt"), "12238787");
 
             List<string> aaaaabb = new List<string> { "aaa", "bbb", "cccc"};
             var ccc = aaaaabb.Take(2).ToList();
             var dddd = aaaaabb.Last();
+
+            var dddresult = aaaaabb.Find(item => item == "ddd");
+
+            var testdefault = default(Person);
 
             //var ftpService = new FTPManager("oz3t", "mygod518$", "10.1.24.178");
             //ftpService.UpLoadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UPS", "635761076339268887.jpg"), "635761076339268887.jpg");
