@@ -669,7 +669,13 @@ namespace Test
             Console.WriteLine(Math.Round(10.14568, 2));
 
             int i = GetPropertyValue<int>("sss");
-            
+
+            bool isPartial = false;
+
+            bool.TryParse("tRue", out isPartial);
+
+            Console.WriteLine(isPartial);
+
             Console.ReadLine();
         }
 
