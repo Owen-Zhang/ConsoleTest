@@ -680,6 +680,9 @@ namespace Test
 
             Console.WriteLine(isPartial);
 
+            //Console.ReadLine();
+
+            Service.Reflectors.CreateInstance(Type.GetType("Test.Common.TestReflectorClass"));
             Console.ReadLine();
         }
 

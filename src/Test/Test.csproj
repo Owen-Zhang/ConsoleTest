@@ -94,6 +94,7 @@
     <Compile Include="Common\SerializeManager.cs" />
     <Compile Include="Common\SSBCate0Model.cs" />
     <Compile Include="Common\StreamZip.cs" />
+    <Compile Include="Common\TestReflectorClass.cs" />
     <Compile Include="Common\TestStatic.cs" />
     <Compile Include="ConfigurationManager\RestResourceConfiguration.cs" />
     <Compile Include="ConfigurationManager\RestResourceSection.cs" />
