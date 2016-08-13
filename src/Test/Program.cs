@@ -712,6 +712,8 @@ namespace Test
 
             method.Invoke(instance, null);
 
+            Service.Reflectors.CreateInstance(Type.GetType("Test.Common.TestReflectorClass"));
+
             Console.ReadLine();
         }
 
