@@ -111,6 +111,9 @@
     <Compile Include="Model\GetShippingLabelResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflector\FlectoerCreateInstance.cs" />
+    <Compile Include="Reflector\FlectorImplement-Implement.cs" />
+    <Compile Include="Reflector\FlectorImplement.cs" />
     <Compile Include="UseInterfaceWithStructureMap.cs" />
     <Compile Include="ZIP\ZIPManager.cs" />
   </ItemGroup>

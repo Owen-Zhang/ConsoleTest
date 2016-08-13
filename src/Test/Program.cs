@@ -670,6 +670,12 @@ namespace Test
                     item => Console.WriteLine(item.Id)
                 );
 
+            var personTemp = pList10.Where(item => item.Id == 1).FirstOrDefault();
+            personTemp.IsEnabled = false;
+
+            var listPersonSort = new List<Person>();
+            listPersonSort.OrderBy(item => item.Id);
+
             Console.WriteLine(Math.Round(10.14568, 2));
 
             int i = GetPropertyValue<int>("sss");
@@ -680,12 +686,38 @@ namespace Test
 
             Console.WriteLine(isPartial);
 
+            string splitstring = @"";
+            var arraysplit = splitstring.Split('\\');
+
+            var typetest = Type.GetType("Test.Log11");
+
+            if (typeof(OrderModel).IsAssignableFrom(typeof(OtherOrderModuleImplement)))
+                Console.WriteLine("test sdfadsfadfasdfad");
+
+
+            var typeTaksk = Type.GetType("Test.Reflector.FlectorImplement_Implement");
+            var method = typeTaksk.GetMethod("Run");
+            var ci = typeTaksk.GetConstructor(new Type[] { typeof(string) });
+            var instance = ci.Invoke(new object[] { "Test.Reflector.FlectorImplement_Implement" });
+            /*
+            var instance = typeTaksk.Assembly.CreateInstance(
+                                typeTaksk.FullName,
+                                false,
+                                System.Reflection.BindingFlags.Instance,
+                                null,
+                                new object[] { "Test.Reflector.FlectorImplement" },
+                                null,
+                                null);
+             * */
+
+            method.Invoke(instance, null);
+
             Console.ReadLine();
         }
 
         public static T GetPropertyValue<T>(string key)
         {
-            object value = "true";
+            object value = "123";
 
             if (string.IsNullOrEmpty(key)) return default(T);
             Type tp = typeof(T);
