@@ -82,6 +82,7 @@
     <Compile Include="Common\BaseOther.cs" />
     <Compile Include="Common\Constr.cs" />
     <Compile Include="Common\FTPManager.cs" />
+    <Compile Include="Common\Holiday.cs" />
     <Compile Include="Common\HttpClient.cs" />
     <Compile Include="Common\Implement.cs" />
     <Compile Include="Common\ImplementOther.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Common\TestStatic.cs" />
     <Compile Include="ConfigurationManager\RestResourceConfiguration.cs" />
     <Compile Include="ConfigurationManager\RestResourceSection.cs" />
+    <Compile Include="DesSerialize\CommandFile.cs" />
     <Compile Include="FileManager\FileReadOrWrite.cs" />
     <Compile Include="Interface\IFilter.cs" />
     <Compile Include="Interface\PersonEnum.cs" />
@@ -122,6 +124,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="DesSerialize\Content.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

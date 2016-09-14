@@ -24,6 +24,9 @@ using System.Linq.Expressions;
 using Test.ZIP;
 using System.Threading;
 using System.Reflection;
+using Test.DesSerialize;
+using System.Text.RegularExpressions;
+using System.Configuration;
 
 
 namespace Test
@@ -714,7 +717,70 @@ namespace Test
 
             Service.Reflectors.CreateInstance(Type.GetType("Test.Common.TestReflectorClass"));
 
+            var fileContent = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\DesSerialize\\Content.xml", Encoding.UTF8);
+            //var resultModule =
+
+             StringReader reader4 = new StringReader(fileContent);
+             var serializer3 = new XmlSerializer(typeof(CommandFile));
+             var rss3 = (CommandFile)serializer3.Deserialize(reader4);
+
+             Regex regex = new Regex(@"\w");
+             var regexResult = regex.Matches(@"China chengdu d
+                            
+                                               54545@sdfasdf\_中文");
+             StringBuilder regexStr = new StringBuilder();
+             for (int k = 0; k < regexResult.Count; k++)
+             {
+                 regexStr.Append(regexResult[k].Value);
+             }
+             Console.WriteLine(regexStr.ToString());
+
+
+             string path111 = @"\mydir\";
+             string fileName = @"file\myfile.ext";
+             string fullPath = @"C:\mydir\myfile.ext";
+             string pathRoot;
+
+             pathRoot = Path.GetPathRoot(path111);
+             Console.WriteLine("GetPathRoot('{0}') returns '{1}'",
+                 path111, pathRoot);
+
+             pathRoot = Path.GetPathRoot(fileName);
+             Console.WriteLine("GetPathRoot('{0}') returns '{1}'",
+                 fileName, pathRoot);
+
+             pathRoot = Path.GetPathRoot(fullPath);
+             Console.WriteLine("GetPathRoot('{0}') returns '{1}'",
+                 fullPath, pathRoot);
+
+            string spaceFlag = @"\w";
+             string oldstr = "ADDR ESS,TY-PE_=1";
+             string testdb = ReplaceSpecialCharacter(oldstr);
+             Console.WriteLine(testdb);
+
+             string newStr = "ADDRESSTYPE=1";
+             string testinput = ReplaceSpecialCharacter(newStr);
+            if (string.Equals(testdb, testinput, StringComparison.OrdinalIgnoreCase))
+                Console.WriteLine("true");
+
+            Holiday.Test();
+            Holiday.Test();
+
             Console.ReadLine();
+        }
+
+        private static string ReplaceSpecialCharacter(string content)
+        {
+            if (string.IsNullOrWhiteSpace(content))
+                return string.Empty;
+
+            Regex regex = new Regex(@"\w");
+            var regexResult = regex.Matches(content);
+            var regexStr = new StringBuilder();
+            for (int i = 0; i < regexResult.Count; i++)
+                regexStr.Append(regexResult[i].Value);
+
+            return regexStr.ToString().Replace("_", "");
         }
 
         public static T GetPropertyValue<T>(string key)
