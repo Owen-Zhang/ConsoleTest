@@ -7,3 +7,12 @@ D:\MyCode\Test\IService\bin\Debug\AutoMapper.dll
 D:\MyCode\Test\IService\obj\Debug\IService.csprojResolveAssemblyReference.cache
 D:\MyCode\Test\IService\bin\Debug\Model.dll
 D:\MyCode\Test\IService\bin\Debug\Model.pdb
+D:\MyCode\other\src\IService\bin\Debug\IService.dll
+D:\MyCode\other\src\IService\bin\Debug\IService.pdb
+D:\MyCode\other\src\IService\bin\Debug\Aspose.Cells.dll
+D:\MyCode\other\src\IService\bin\Debug\AutoMapper.dll
+D:\MyCode\other\src\IService\bin\Debug\Model.dll
+D:\MyCode\other\src\IService\bin\Debug\Model.pdb
+D:\MyCode\other\src\IService\obj\Debug\IService.csprojResolveAssemblyReference.cache
+D:\MyCode\other\src\IService\obj\Debug\IService.dll
+D:\MyCode\other\src\IService\obj\Debug\IService.pdb

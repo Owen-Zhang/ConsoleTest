@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelMapAttribute.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="OrderModuleImplement.cs" />
     <Compile Include="PersonModel.cs" />

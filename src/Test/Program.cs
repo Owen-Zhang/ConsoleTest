@@ -763,10 +763,42 @@ namespace Test
             if (string.Equals(testdb, testinput, StringComparison.OrdinalIgnoreCase))
                 Console.WriteLine("true");
 
+            List<string> testDistinct = new List<string> { " ", };
+            var resultOther = testDistinct.Select(item => item.ToUpper().Trim());
+
+            var distinctResult = resultOther.Distinct().ToList();
+
+            var dttest = DateTime.Now.AddHours(3);
+            var AcceptDate = dttest.Hour >= 18 ? DateTime.Now.Date.AddDays(1) : DateTime.Today;
+            Console.WriteLine(AcceptDate);
+
             Holiday.Test();
             Holiday.Test();
 
+            var resultProperty = Reflect<OrderModel>();
+
             Console.ReadLine();
+        }
+
+        private static T Reflect<T>() where T : new()
+        {
+            T temp = new T();
+            var propertInfoList = typeof(T).GetProperties();
+            foreach (var property in propertInfoList)
+            {
+                if (!property.CanWrite) continue;
+                var excelMappingStr = property.Name;
+                var mapAttribute = property.GetCustomAttribute<ExcelMapAttribute>();
+                if (mapAttribute != null) 
+                    excelMappingStr = mapAttribute.Mapping;
+
+                if (property.PropertyType == typeof(int))
+                    property.SetValue(temp, 11, null);
+                if (property.PropertyType == typeof(string))
+                    property.SetValue(temp, "11", null);
+            }
+
+            return temp;
         }
 
         private static string ReplaceSpecialCharacter(string content)

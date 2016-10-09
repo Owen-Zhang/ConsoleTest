@@ -47,3 +47,4 @@ D:\MyCode\other\src\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\MyCode\other\src\Test\obj\Debug\Test.exe
 D:\MyCode\other\src\Test\obj\Debug\Test.pdb
 D:\MyCode\other\src\Test\bin\Debug\DesSerialize\Content.xml
+D:\MyCode\other\src\Test\bin\Debug\Aspose.Cells.dll

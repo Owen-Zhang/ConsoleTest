@@ -50,6 +50,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\packages\Aspose.Cells.1.0.0\lib\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\ICSharpCode.SharpZipLib.1.0.0\lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -126,6 +129,7 @@
     </None>
     <Content Include="DesSerialize\Content.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -135,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
+    <Folder Include="Excel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IService\IService.csproj">

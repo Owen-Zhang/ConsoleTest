@@ -18,6 +18,7 @@ namespace Model
     {
         public int Id { get; set; }
 
+        [ExcelMapAttribute("Order Number")]
         public string OrderNumber { get; set; }
     }
 }
