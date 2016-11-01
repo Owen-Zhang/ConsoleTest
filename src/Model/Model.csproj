@@ -46,6 +46,7 @@
     <Compile Include="OrderModuleImplement.cs" />
     <Compile Include="PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellerPremierItemSettingStatus.cs" />
     <Compile Include="ShipMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

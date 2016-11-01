@@ -585,8 +585,8 @@ namespace Test
 
             Console.WriteLine("End");
 
-            int refInt = 0;
-            int.TryParse("5965415214", out refInt);
+            int refInt = 10;
+            int.TryParse("123@@", out refInt);
 
             Dictionary<string, string> countryDic = new Dictionary<string, string>() 
             {
@@ -776,6 +776,26 @@ namespace Test
             Holiday.Test();
 
             var resultProperty = Reflect<OrderModel>();
+
+            //Regex regexother = new Regex(@"^(9[B|b])?[a-zA-Z\d]{2}-[a-zA-Z\d]{3}-[a-zA-Z\d]{3}([R|r]|CVF)?$");
+            //Regex regexother = new Regex(@"^(9[B|b])?[a-zA-Z\d]{3}-[a-zA-Z\d]{4}-[a-zA-Z\d]{5}$");
+            //Regex regexother = new Regex(@"^9[S|s][I|i][a-zA-Z\d]{11,25}$");
+
+            string Regex9siStr = @"^9[S|s][I|i][a-zA-Z\d]{11,21}$";
+            string Regex345Str = @"^(9[B|b])?[a-zA-Z\d]{3}-[a-zA-Z\d]{4}-[a-zA-Z\d]{5}([R|r])?$";
+            string Regex233Str = @"^(9[B|b])?[a-zA-Z\d]{2}-[a-zA-Z\d]{3}-[a-zA-Z\d]{3}([R|r]|CVF)?$";
+            var regex9si = new Regex(Regex9siStr, RegexOptions.Compiled);
+            var regex345 = new Regex(Regex345Str, RegexOptions.Compiled);
+            var regex233 = new Regex(Regex233Str, RegexOptions.Compiled);
+
+            string TargetItem = "9b225-3338-45656R";
+            if (!(regex233.IsMatch(TargetItem) || regex345.IsMatch(TargetItem) || regex9si.IsMatch(TargetItem)))
+            {
+                Console.WriteLine("false");
+            }
+
+            string jsonContent = System.IO.File.ReadAllText("D:\\1.txt");
+            var resulttest = ServiceStack.Text.JsonSerializer.DeserializeFromString<SellerPremierItemSettingStatusList>(jsonContent);
 
             Console.ReadLine();
         }
