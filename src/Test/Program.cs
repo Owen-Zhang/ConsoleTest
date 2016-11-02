@@ -27,6 +27,7 @@ using System.Reflection;
 using Test.DesSerialize;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using System.Resources;
 
 
 namespace Test
@@ -793,10 +794,7 @@ namespace Test
             {
                 Console.WriteLine("false");
             }
-
-            string jsonContent = System.IO.File.ReadAllText("D:\\1.txt");
-            var resulttest = ServiceStack.Text.JsonSerializer.DeserializeFromString<SellerPremierItemSettingStatusList>(jsonContent);
-
+            Test.Resource.ResourceGenerater.GenerateResxFile();
             Console.ReadLine();
         }
 
