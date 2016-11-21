@@ -50,17 +50,22 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells">
-      <HintPath>..\packages\Aspose.Cells.1.0.0\lib\Aspose.Cells.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\ICSharpCode.SharpZipLib.1.0.0\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.4.4.0-beta3\lib\net451\NLog.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>Lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SolrNet, Version=0.4.0.4001, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SolrNet.0.4.0.4001\lib\SolrNet.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>Lib\StructureMap.dll</HintPath>
@@ -123,6 +128,8 @@
     <Compile Include="Reflector\FlectorImplement-Implement.cs" />
     <Compile Include="Reflector\FlectorImplement.cs" />
     <Compile Include="Resource\ResourceManager.cs" />
+    <Compile Include="Solr\SolrOrder.cs" />
+    <Compile Include="Solr\SolrTest.cs" />
     <Compile Include="UseInterfaceWithStructureMap.cs" />
     <Compile Include="ZIP\ZIPManager.cs" />
   </ItemGroup>
@@ -139,6 +146,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="packages.config" />
+    <None Include="SolrNet.chm" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />

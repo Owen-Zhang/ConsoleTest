@@ -795,6 +795,12 @@ namespace Test
                 Console.WriteLine("false");
             }
             Test.Resource.ResourceGenerater.GenerateResxFile();
+
+            /*solr*/
+            var solr = new Test.Solr.SolrTest();
+            solr.AddOrder();
+            solr.DeleteOrder();
+
             Console.ReadLine();
         }
 
