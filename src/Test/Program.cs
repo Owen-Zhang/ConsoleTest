@@ -801,6 +801,8 @@ namespace Test
             solr.AddOrder();
             solr.DeleteOrder();
 
+            new Test.MongoDb.MongoDbManager().TestMongo();
+
             Console.ReadLine();
         }
 
