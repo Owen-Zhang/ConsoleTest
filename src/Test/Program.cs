@@ -797,12 +797,14 @@ namespace Test
             Test.Resource.ResourceGenerater.GenerateResxFile();
 
             /*solr*/
-            var solr = new Test.Solr.SolrTest();
+            /*var solr = new Test.Solr.SolrTest();
             solr.AddOrder();
             solr.DeleteOrder();
 
             new Test.MongoDb.MongoDbManager().TestMongo();
+            */
 
+            
             Console.ReadLine();
         }
 
