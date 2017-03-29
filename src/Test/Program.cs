@@ -797,11 +797,23 @@ namespace Test
             Test.Resource.ResourceGenerater.GenerateResxFile();
 
             /*solr*/
+            /*
             var solr = new Test.Solr.SolrTest();
             solr.AddOrder();
             solr.DeleteOrder();
+            */
 
-            new Test.MongoDb.MongoDbManager().TestMongo();
+            string path6 = @"sdfasdf\dfdfd\tx.txt";
+            var folderPath = path6.Substring(0, path6.LastIndexOf(@"\"));
+
+
+            //new Test.MongoDb.MongoDbManager().TestMongo();
+
+            if (ConfigurationManager.AppSettings["sdf"] != null)
+                Console.WriteLine(ConfigurationManager.AppSettings["sdf"].ToString());
+
+            var joinstr = string.Join(" OR ", new int[] { 121, 3453, 4534});
+            Console.WriteLine(joinstr);
 
             Console.ReadLine();
         }

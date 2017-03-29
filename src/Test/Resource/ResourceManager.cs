@@ -14,9 +14,7 @@ namespace Test.Resource
             var resxFile = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BusinessError.resx");
             using (var writer = new ResXResourceWriter(resxFile))
             {
-                writer.AddResource("002", "sfdasdasdfd");
-                writer.AddResource("008", "586945");
-                writer.AddResource("007", "78787885");
+                writer.AddResource("DataFormat_Solr", "yyyy-MM-ddTHH:mm:ss.fffZ");  
             }
             string designFilePath = resxFile.Replace(".resx", ".designer.cs");
 
